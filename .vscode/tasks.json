@@ -1,0 +1,26 @@
+{
+  "tasks": [
+    {
+      "label": "Build exe",
+      "version": "1.0.0",
+      "command": "fasm",
+      "isShellCommand": true,
+      "args": ["${file}", "${file}.exe"],
+      "showOutput": "always",
+      "group": "build",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "Run exe",
+      "version": "1.0.0",
+      "command": "${file}.exe",
+      "isShellCommand": true,
+      "showOutput": "always",
+      "dependsOn": ["Build exe"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
